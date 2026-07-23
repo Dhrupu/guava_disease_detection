@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+venv/
+.env
+
+# Dataset (don't upload training data)
+dataset/
+
+# Uploaded test images
+uploads/
+static/uploads/
+
+# Model checkpoints (keep if you want only the final model)
+*.h5
+
+# VS Code
+.vscode/
+
+# macOS / Windows
+.DS_Store
+Thumbs.db

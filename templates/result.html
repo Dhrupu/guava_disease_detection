@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>🍃 Guava Disease Detection</h1>
+
+    <img src="{{ url_for('static', filename='uploads/' + image_name) }}"
+         alt="Uploaded Image"
+         class="preview-image">
+
+    <h2>Prediction Result</h2>
+
+    <h1 class="disease">{{ disease }}</h1>
+
+    <h2>Confidence</h2>
+
+    <h1 class="confidence">{{ confidence }}%</h1>
+
+    <a href="/" class="button">Try Another Image</a>
+
+</div>
+
+</body>
+
+</html>
