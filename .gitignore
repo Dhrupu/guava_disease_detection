@@ -6,19 +6,16 @@ __pycache__/
 venv/
 .env
 
-# Dataset (don't upload training data)
+# Dataset
 dataset/
 
-# Uploaded test images
+# Uploaded images
 uploads/
 static/uploads/
-
-# Model checkpoints (keep if you want only the final model)
-*.h5
 
 # VS Code
 .vscode/
 
-# macOS / Windows
+# OS files
 .DS_Store
 Thumbs.db
