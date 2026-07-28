@@ -6,15 +6,7 @@ pipeline {
         CONTAINER_NAME = "guava-container"
     }
 
-    stages {
-
-        stage('Clone Repository') {
-            steps {
-                git branch: 'main',
-                    url: 'https://github.com/Dhrupu/guava_disease_detection.git'
-            }
-        }
-
+    
         stage('Build Docker Image') {
             steps {
                 sh 'docker build -t $IMAGE_NAME .'
