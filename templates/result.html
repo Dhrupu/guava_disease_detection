@@ -5,7 +5,8 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Prediction Result</title>
 
@@ -18,21 +19,29 @@
 
 <div class="container">
 
-    <h1>🍃 Guava Disease Detection</h1>
+    <h1>🍃 Prediction Result</h1>
 
     <img src="{{ url_for('static', filename='uploads/' + image_name) }}"
-         alt="Uploaded Image"
-         class="preview-image">
+         class="preview-image"
+         alt="Uploaded Image">
 
-    <h2>Prediction Result</h2>
+    <h2>Disease Detected</h2>
 
-    <h1 class="disease">{{ disease }}</h1>
+    <div class="disease">
+        {{ disease }}
+    </div>
+
+    <hr>
 
     <h2>Confidence</h2>
 
-    <h1 class="confidence">{{ confidence }}%</h1>
+    <div class="confidence">
+        {{ confidence }}%
+    </div>
 
-    <a href="/" class="button">Try Another Image</a>
+    <a href="/" class="button">
+        Predict Another Image
+    </a>
 
 </div>
 

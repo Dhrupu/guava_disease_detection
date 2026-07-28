@@ -2,16 +2,11 @@
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guava Disease Detection AI</title>
 
-    <title>Guava Disease Detection</title>
-
-    <link rel="stylesheet"
-          href="{{ url_for('static', filename='css/style.css') }}">
-
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body>
@@ -21,20 +16,15 @@
     <h1>🍃 Guava Disease Detection</h1>
 
     <p class="subtitle">
-        Upload a guava leaf or fruit image to detect its disease.
+        Upload a Guava Leaf Image and let AI identify the disease instantly.
     </p>
 
-    <form action="/predict"
-          method="POST"
-          enctype="multipart/form-data">
+    <form action="/predict" method="POST" enctype="multipart/form-data">
 
-        <input
-            type="file"
-            name="image"
-            accept="image/*"
-            required>
-
-        <br><br>
+        <input type="file"
+               name="file"
+               accept="image/*"
+               required>
 
         <button type="submit">
             Predict Disease
