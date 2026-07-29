@@ -59,11 +59,11 @@ def predict():
 
     # Show result page
     return render_template(
-        "result.html",
-        disease=predicted_class,
-        confidence=round(confidence * 100, 2),
-        image_name=filename
-    )
+    "result.html",
+    disease=predicted_class.replace("_", " ").title(),
+    confidence=round(confidence * 100, 2),
+    image_name=filename
+)
 
 # ==========================================================
 # RUN SERVER

@@ -1,39 +1,440 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <head>
+
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guava Disease Detection AI</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Guava Fruit Disease Detection AI</title>
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- CSS -->
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
-
 <body>
 
-<div class="container">
+<nav class="navbar">
 
-    <h1>🍃 Guava Disease Detection</h1>
+    <div class="logo">
 
-    <p class="subtitle">
-        Upload a Guava Leaf Image and let AI identify the disease instantly.
+        <i class="fa-solid fa-leaf"></i>
+
+        <span>Guava Disease Detection <span class="green">AI</span></span>
+
+    </div>
+
+    <ul>
+
+        <li><a href="#">Home</a></li>
+
+        <li><a href="#about">About</a></li>
+
+        <li><a href="#how">How It Works</a></li>
+
+        <li><a href="#model">Model Info</a></li>
+
+        <li>
+
+            <a href="https://github.com/Dhrupu/guava_disease_detection"
+               target="_blank">
+
+                <i class="fab fa-github"></i>
+
+                GitHub
+
+            </a>
+
+        </li>
+
+    </ul>
+
+</nav>
+<section class="hero">
+
+    <div class="hero-left">
+
+        <div class="live-badge">
+
+            🚀 Live CI/CD Deployment
+
+        </div>
+
+        <h1>
+
+            AI-Powered
+
+            <span>Guava Fruit</span>
+
+            Disease Detection
+
+        </h1>
+
+        <p>
+
+            Upload a guava fruit image and let our deep learning model identify
+            the disease with high accuracy.
+
+        </p>
+
+        <div class="tech-badges">
+
+            <span>
+                <i class="fa-solid fa-brain"></i>
+                TensorFlow CNN
+            </span>
+
+            <span>
+                <i class="fab fa-docker"></i>
+                Docker
+            </span>
+
+            <span>
+                <i class="fa-solid fa-gears"></i>
+                Jenkins CI/CD
+            </span>
+
+            <span>
+                <i class="fab fa-aws"></i>
+                AWS EC2
+            </span>
+
+            <span>
+                <i class="fab fa-github"></i>
+                GitHub CI/CD
+            </span>
+
+        </div>
+
+    </div>
+
+    <div class="hero-right">
+
+        <div class="upload-card">
+
+            <h2>
+
+                <i class="fa-solid fa-leaf"></i>
+
+                Upload Guava Fruit Image
+
+            </h2>
+
+            <p>
+
+                Supported formats:
+                JPG, JPEG, PNG
+
+            </p>
+
+            <form
+                action="/predict"
+                method="POST"
+                enctype="multipart/form-data">
+
+                <div class="upload-box">
+
+                    <i class="fa-solid fa-cloud-arrow-up upload-icon"></i>
+
+                    <p>
+
+                        Drag & Drop your image here
+
+                    </p>
+
+                    <span>or</span>
+
+                    <input
+                        type="file"
+                        name="image"
+                        accept="image/*"
+                        required>
+
+                </div>
+
+                <button type="submit">
+
+                    <i class="fa-solid fa-magnifying-glass"></i>
+
+                    Predict Disease
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= FEATURES ================= -->
+
+<section class="features">
+
+    <div class="feature-card">
+
+        <i class="fa-solid fa-brain"></i>
+
+        <h3>Deep Learning</h3>
+
+        <p>
+            TensorFlow CNN model trained to detect guava fruit diseases.
+        </p>
+
+    </div>
+
+    <div class="feature-card">
+
+        <i class="fab fa-docker"></i>
+
+        <h3>Dockerized</h3>
+
+        <p>
+            Fully containerized for consistent deployment across environments.
+        </p>
+
+    </div>
+
+    <div class="feature-card">
+
+        <i class="fa-solid fa-gears"></i>
+
+        <h3>CI/CD Pipeline</h3>
+
+        <p>
+            Automatic deployment using Jenkins and GitHub Webhooks.
+        </p>
+
+    </div>
+
+    <div class="feature-card">
+
+        <i class="fab fa-aws"></i>
+
+        <h3>AWS EC2</h3>
+
+        <p>
+            Hosted on Amazon EC2 cloud infrastructure.
+        </p>
+
+    </div>
+
+    <div class="feature-card">
+
+        <i class="fab fa-github"></i>
+
+        <h3>GitHub</h3>
+
+        <p>
+            Version controlled using Git and GitHub repository.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="info-section">
+
+    <div class="info-card">
+
+        <h2>
+
+            <i class="fa-solid fa-circle-info"></i>
+
+            About Project
+
+        </h2>
+
+        <p>
+
+            This application uses a Deep Learning model built with TensorFlow
+            to identify diseases in guava fruits from uploaded images.
+
+        </p>
+
+    </div>
+
+    <div class="info-card">
+
+        <h2>
+
+            <i class="fa-solid fa-virus"></i>
+
+            Detectable Diseases
+
+        </h2>
+
+        <ul>
+
+            <li>Anthracnose</li>
+
+            <li>Canker</li>
+
+            <li>Dot</li>
+
+            <li>Mummification</li>
+
+            <li>Healthy Fruit</li>
+
+        </ul>
+
+    </div>
+
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+
+<section id="how" class="workflow">
+
+    <h2>How It Works</h2>
+
+    <div class="workflow-container">
+
+        <div class="step">
+
+            <i class="fa-solid fa-image"></i>
+
+            <h3>Upload</h3>
+
+            <p>Select a guava fruit image.</p>
+
+        </div>
+
+        <div class="step">
+
+            <i class="fa-solid fa-microchip"></i>
+
+            <h3>Prediction</h3>
+
+            <p>The CNN model analyzes the image.</p>
+
+        </div>
+
+        <div class="step">
+
+            <i class="fa-solid fa-square-poll-vertical"></i>
+
+            <h3>Result</h3>
+
+            <p>Disease and confidence score are displayed.</p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================= MODEL INFO ================= -->
+
+<section id="model" class="tech-stack">
+
+    <h2>Technology Stack</h2>
+
+    <div class="stack-grid">
+
+        <div>Python</div>
+
+        <div>TensorFlow</div>
+
+        <div>Flask</div>
+
+        <div>Docker</div>
+
+        <div>Jenkins</div>
+
+        <div>AWS EC2</div>
+
+        <div>GitHub</div>
+
+        <div>HTML/CSS</div>
+
+    </div>
+
+</section>
+
+<!-- ================= DEPLOYMENT ================= -->
+
+<section class="deployment">
+
+    <div class="deployment-card">
+
+        <h2>
+
+            <i class="fa-solid fa-rocket"></i>
+
+            Deployment Pipeline
+
+        </h2>
+
+        <p>
+
+            GitHub
+
+            →
+
+            Jenkins
+
+            →
+
+            Docker
+
+            →
+
+            AWS EC2
+
+            →
+
+            Live Website
+
+        </p>
+
+    </div>
+
+</section>
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <h3>
+
+        Guava Fruit Disease Detection AI
+
+    </h3>
+
+    <p>
+
+        Built using TensorFlow • Flask • Docker • Jenkins • AWS EC2
+
     </p>
 
-    <form action="/predict" method="POST" enctype="multipart/form-data">
+    <p>
 
-        <input
-            type="file"
-            name="image"
-            accept="image/*"
-            required>
+        Developed by <strong>C R Dhrupadh</strong>
 
-        <button type="submit">
-            Predict Disease
-        </button>
+    </p>
 
-    </form>
-
-</div>
+</footer>
 
 </body>
 

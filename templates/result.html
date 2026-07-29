@@ -5,10 +5,21 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Prediction Result</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <link rel="stylesheet"
           href="{{ url_for('static', filename='css/style.css') }}">
@@ -17,33 +28,75 @@
 
 <body>
 
+<nav class="navbar">
+
+    <div class="logo">
+
+        <i class="fa-solid fa-leaf"></i>
+
+        <span>Guava Disease Detection <span class="green">AI</span></span>
+
+    </div>
+
+</nav>
+
 <div class="container">
 
-    <h1>🍃 Prediction Result</h1>
+    <h1>
+
+        <i class="fa-solid fa-circle-check"></i>
+
+        Prediction Complete
+
+    </h1>
+
+    <hr>
 
     <img src="{{ url_for('static', filename='uploads/' + image_name) }}"
          class="preview-image"
          alt="Uploaded Image">
 
-    <h2>Disease Detected</h2>
+    <h2 class="disease">
 
-    <div class="disease">
         {{ disease }}
-    </div>
 
-    <hr>
+    </h2>
 
-    <h2>Confidence</h2>
+    <p class="confidence">
 
-    <div class="confidence">
-        {{ confidence }}%
-    </div>
+        Confidence: {{ confidence }}%
+
+    </p>
+
+    <br>
 
     <a href="/" class="button">
-        Predict Another Image
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Analyze Another Image
+
     </a>
 
 </div>
+
+<footer>
+
+    <h3>Guava Fruit Disease Detection AI</h3>
+
+    <p>
+
+        Built using TensorFlow • Flask • Docker • Jenkins • AWS EC2
+
+    </p>
+
+    <p>
+
+        Developed by <strong>C R Dhrupadh</strong>
+
+    </p>
+
+</footer>
 
 </body>
 
